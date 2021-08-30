@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './view/App';
+import ViewsRouter from './views/ViewsRouter';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ViewsRouter />
   </React.StrictMode>,
   document.getElementById('root')
 );
