@@ -1,14 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './Button.scss';
+import useStyles from './styles'
 import { Button } from '@material-ui/core';
 
-const ButtonComponent = (props) =>  {
-    const { text } = props;
+const ButtonComponent = (componentProps) =>  {
+    const { text, buttonCustomStyle, fontCustomStyle } = componentProps;
+    const styles = useStyles({
+        buttonCustomStyle,
+        fontCustomStyle
+    });
 
     return (
-        <Button className='Button'>
-            <span className='Text'>
+        <Button className = {styles.button}>
+            <span className = {styles.text}>
                 {text}
             </span>
         </Button>
@@ -16,11 +20,15 @@ const ButtonComponent = (props) =>  {
 }
 
 ButtonComponent.propTypes = {
-    text: PropTypes.string
+    text: PropTypes.string,
+    fontCustomStyle: PropTypes.object,
+    buttonCustomStyle: PropTypes.object, 
 }
 
 ButtonComponent.defaultProps = {
-    text: ''
+    text: '',
+    buttonCustomStyle: null,
+    fontCustomStyle: null
 }
 
 export default ButtonComponent;

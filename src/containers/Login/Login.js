@@ -1,13 +1,19 @@
 
 import './Login.css';
 import { Form, Button } from '../../components';
+import useStyle from './styles';
 
-function Login() {
+const Login = (props) => {
+  const { rootCustomStyle } = props;
+  const styles = useStyle(rootCustomStyle)
+  
   return (
-    <div className="Login">
+    <div className={styles.root}>
       <Form 
         content = {
-          <Button text = 'TESTE'/>
+          <Button 
+            text = 'TESTE'
+          />
         }
       />
     </div>
