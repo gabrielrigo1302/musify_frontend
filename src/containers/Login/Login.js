@@ -1,23 +1,21 @@
-import logo from '../../assets/logo.svg';
-import './Login.css';
 
-function Login() {
+import './Login.css';
+import { Form, Button } from '../../components';
+import useStyle from './styles';
+
+const Login = (props) => {
+  const { rootCustomStyle } = props;
+  const styles = useStyle(rootCustomStyle)
+  
   return (
-    <div className="Login">
-      <header className="Login-header">
-        <img src={logo} className="Login-logo" alt="logo" />
-        <p>
-          Edit <code>src/Login.js</code> and save to reload.
-        </p>
-        <a
-          className="Login-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={styles.root}>
+      <Form 
+        content = {
+          <Button 
+            text = 'TESTE'
+          />
+        }
+      />
     </div>
   );
 }

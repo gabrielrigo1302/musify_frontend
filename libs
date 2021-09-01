@@ -5,3 +5,5 @@ react-router
 react-router-dom
 prop-types
 connected-react-router
+material-ui/core
+sass
